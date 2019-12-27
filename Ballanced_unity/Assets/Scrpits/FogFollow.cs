@@ -15,6 +15,7 @@ public class FogFollow : MonoBehaviour
     private Global global;
     void Start()
     {
+        global = GameObject.Find("Global").GetComponent<Global>();
         follow = GameObject.Find("Camera").transform;
         offset = transform.position - follow.position;
         

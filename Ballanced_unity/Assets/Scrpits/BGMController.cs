@@ -8,7 +8,8 @@ public class BGMController : MonoBehaviour
     AudioSource audioBGM;
     AudioClip[] BGMs;
 
-    private float interval = 0;
+    private float interval = 3;
+    public bool ifNoBGM = false;
 
     private void playSong(int toPlay)
     {
@@ -19,13 +20,20 @@ public class BGMController : MonoBehaviour
     {
         audioBGM = this.GetComponent<AudioSource>();   
         BGMs = new AudioClip[] { Resources.Load<AudioClip>("Sound/BGM/Music_Theme_3_1"), Resources.Load<AudioClip>("Sound/BGM/Music_Theme_3_2"), Resources.Load<AudioClip>("Sound/BGM/Music_Theme_3_3") };
-        playSong(0);
+        
+    }
+
+    public void StopPlayingOrigin()
+    {
+        audioBGM.Stop();
+        ifNoBGM = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (ifNoBGM)
+            return;
         if (audioBGM.isPlaying && interval < 0.1)
         {
             interval = Random.Range(10f, 60f);

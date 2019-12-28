@@ -10,6 +10,9 @@ TagManager:
   - BonesBall
   - WoodObject
   - MetalObject
+<<<<<<< HEAD
+>>>>>>> parent of d0301da... Checkpoint
+=======
 >>>>>>> parent of d0301da... Checkpoint
   layers:
   - Default

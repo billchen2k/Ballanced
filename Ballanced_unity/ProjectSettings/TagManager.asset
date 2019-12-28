@@ -3,17 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
-  tags: []
-=======
   tags:
   - BonesBall
   - WoodObject
   - MetalObject
-<<<<<<< HEAD
->>>>>>> parent of d0301da... Checkpoint
-=======
->>>>>>> parent of d0301da... Checkpoint
+  - BirthPoint
+  - CheckPoint
+  - WinningPoint
   layers:
   - Default
   - TransparentFX
@@ -23,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - Map
   - 
   - 
   - 

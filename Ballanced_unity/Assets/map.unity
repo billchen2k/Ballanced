@@ -8938,6 +8938,9 @@ Transform:
   m_PrefabInstance: {fileID: 778329293}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD:Ballanced_unity/Assets/map.unity
+<<<<<<< HEAD:Ballanced_unity/Assets/map.unity
+>>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
+=======
 >>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
 =======
 >>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
@@ -12678,6 +12681,9 @@ Transform:
   m_Father: {fileID: 682298192}
   m_RootOrder: 237
 <<<<<<< HEAD:Ballanced_unity/Assets/map.unity
+<<<<<<< HEAD:Ballanced_unity/Assets/map.unity
+>>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
+=======
 >>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
 =======
 >>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
@@ -20090,6 +20096,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD:Ballanced_unity/Assets/map.unity
 <<<<<<< HEAD:Ballanced_unity/Assets/map.unity
+<<<<<<< HEAD:Ballanced_unity/Assets/map.unity
 --- !u!1001 &1927174530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20156,6 +20163,8 @@ GameObject:
 --- !u!64 &1927174532
 MeshCollider:
 =======
+=======
+>>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
 =======
 >>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
 --- !u!1 &1922511615
@@ -21374,6 +21383,9 @@ Transform:
   m_PrefabInstance: {fileID: 2015151329}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD:Ballanced_unity/Assets/map.unity
+<<<<<<< HEAD:Ballanced_unity/Assets/map.unity
+>>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
+=======
 >>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
 =======
 >>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
@@ -22954,7 +22966,10 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 1e0390cb64f0b6d4c9a4b5e1d779e179, type: 3}
 <<<<<<< HEAD:Ballanced_unity/Assets/map.unity
 <<<<<<< HEAD:Ballanced_unity/Assets/map.unity
+<<<<<<< HEAD:Ballanced_unity/Assets/map.unity
 =======
+=======
+>>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
 =======
 >>>>>>> parent of d0301da... Checkpoint:Ballanced_unity/Assets/Scenes/map.unity
 --- !u!1001 &6521034810054558333

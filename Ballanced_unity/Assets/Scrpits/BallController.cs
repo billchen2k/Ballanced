@@ -30,15 +30,40 @@ public class BallController : MonoBehaviour
     //分数球
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "BonesBall")
+        switch (other.gameObject.tag)
         {
-            global.playClipByName(audioFX, "Extra_Start");
-            GameObject.Find("TextScore").GetComponent<ScoreCounter>().AddScore(BONES_VALUE);
-            ParticleSystem bps = other.gameObject.transform.Find("BonesParticle").GetComponent<ParticleSystem>();
-            bps.Play();
-            other.gameObject.transform.Find("Fire").GetComponent<ParticleSystem>().Stop();
-            other.gameObject.GetComponent<SphereCollider>().enabled = false;
+            case "BonesBall":
+               //分数球
+                global.playClipByName(audioFX, "Extra_Start");
+                GameObject.Find("TextScore").GetComponent<ScoreCounter>().AddScore(BONES_VALUE);
+                ParticleSystem bps = other.gameObject.transform.Find("BonesParticle").GetComponent<ParticleSystem>();
+                bps.Play();
+                other.gameObject.transform.Find("Fire").GetComponent<ParticleSystem>().Stop();
+                other.gameObject.GetComponent<SphereCollider>().enabled = false;
+                break;
+            case "CheckPoint":
+                //检查点
+                global.playClipByName(audioFX, "Misc_Checkpoint");
+                birthPosition = other.gameObject.transform.position;
+                other.gameObject.GetComponent<SphereCollider>().enabled = false;
+                foreach (ParticleSystem one in other.gameObject.GetComponentsInChildren<ParticleSystem>())
+                {
+                    one.Play();
+                }
+                foreach(Light one in other.gameObject.GetComponentsInChildren<Light>(true))
+                {
+                    one.enabled = true;
+                }
+                break;
+            case "WinningPoint":
+                other.gameObject.GetComponent<SphereCollider>().enabled = false;
+                global.isWinning = true;
+                global.GameWin();
+                break;
+            default:
+                break;
         }
+
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -133,6 +158,10 @@ public class BallController : MonoBehaviour
         if (global.isPaused)
         {
             rd.Sleep();
+            return;
+        }
+        if (global.isWinning)
+        {
             return;
         }
         /*控制运动*/

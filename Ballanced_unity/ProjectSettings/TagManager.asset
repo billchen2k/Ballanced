@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - BonesBall
+  - WoodObject
+  - MetalObject
+>>>>>>> parent of d0301da... Checkpoint
   layers:
   - Default
   - TransparentFX

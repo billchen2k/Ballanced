@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class Global : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -9,12 +10,15 @@ public class Global : MonoBehaviour
     public int SCORE = 999;
     public bool isPaused = false;
     public bool isDying = false;
+    public bool isWinning = false;
 
     public Vector3 originBirthPlace;
     GameObject PanelLose;
     GameObject PanelWin;
     GameObject PanelGaming;
     GameObject[] toHideAtWin;
+
+    private bool isWaitingForRestart = false;
     private int temp = 0;
     void Start()
     {
@@ -32,7 +36,15 @@ public class Global : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isWaitingForRestart)
+        {
+            if(Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Return))
+            {
+                playClipByName("Menu_click");
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("map");
+            }
+        }
     }
 
     public void GameOver()
@@ -47,6 +59,7 @@ public class Global : MonoBehaviour
         isDying = true;
         isPaused = true;
         PanelLose.SetActive(true);//注意等待时间的写法
+        isWaitingForRestart = true;
     }
 
     public void GameWin()
@@ -64,7 +77,7 @@ public class Global : MonoBehaviour
     IEnumerator IEGameWin()
     {
         yield return new WaitForSeconds(3f);
-        isPaused = true;
+        isWinning = true;
         PanelWin.SetActive(true);
         foreach (GameObject one in toHideAtWin)
         {
@@ -77,9 +90,9 @@ public class Global : MonoBehaviour
         AudioSource audioFX = GameObject.Find("AudioFX").GetComponent<AudioSource>();
         audioFX.loop = true;
         playClipByName(audioFX, "Menu_counter");
-        while(temp <= target - 5)
+        while(temp <= target - 2)
         {
-            temp += 5;
+            temp += 2;    
             GameObject.Find("TextWinScore").GetComponent<TMP_Text>().text = "SCORE: " + temp.ToString();
             yield return new WaitForSeconds(0.01f);
         }
@@ -92,6 +105,8 @@ public class Global : MonoBehaviour
             one.SetActive(true);
         }
         playClipByName("Music_Highscore");
+        isWaitingForRestart = true;
+        isPaused = true;
         StopCoroutine(LerpScore(target));
 
     }

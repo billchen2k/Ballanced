@@ -81,7 +81,7 @@ public class MenuHandler : MonoBehaviour
         {
             RestartGame();
         }
-        if (Input.GetKeyUp(KeyCode.U))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
             QuitGame();
         }

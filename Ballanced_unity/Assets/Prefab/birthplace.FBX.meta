@@ -1,21 +1,52 @@
 fileFormatVersion: 2
-guid: e4ffb1876e3b93d41b25d66ff3bc4311
+guid: e510054cece67624a8f986068c80046d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cylinder001
+    100004: Cylinder002
+    100006: Cylinder004
+    100008: Cylinder008
+    100010: Cylinder009
+    100012: Cylinder010
+    100014: Cylinder011
     400000: //RootNode
-    2100000: 'Material #60'
-    2100002: 'Material #59'
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box001
+    400002: Cylinder001
+    400004: Cylinder002
+    400006: Cylinder004
+    400008: Cylinder008
+    400010: Cylinder009
+    400012: Cylinder010
+    400014: Cylinder011
+    2100000: 'Material #26'
+    2100002: 'Material #25'
+    2300000: Cylinder002
+    2300002: Cylinder004
+    2300004: Cylinder008
+    2300006: Cylinder009
+    2300008: Cylinder010
+    2300010: Cylinder011
+    3300000: Cylinder002
+    3300002: Cylinder004
+    3300004: Cylinder008
+    3300006: Cylinder009
+    3300008: Cylinder010
+    3300010: Cylinder011
+    4300000: Cylinder010
+    4300002: Cylinder009
+    4300004: Cylinder008
+    4300006: Cylinder004
+    4300008: Cylinder011
+    4300010: Cylinder002
+    7400000: Take 001
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -62,8 +93,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -90,7 +121,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

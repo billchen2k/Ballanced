@@ -1,15 +1,42 @@
 fileFormatVersion: 2
-guid: e4ffb1876e3b93d41b25d66ff3bc4311
+guid: 0b1d73c66b6d8a442ba745edee0417c6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: 'Material #60'
-    2100002: 'Material #59'
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box001
+    100000: Box002
+    100002: Cylinder001
+    100004: Cylinder002
+    100006: Cylinder003
+    100008: Cylinder004
+    100010: Cylinder005
+    100012: //RootNode
+    400000: Box002
+    400002: Cylinder001
+    400004: Cylinder002
+    400006: Cylinder003
+    400008: Cylinder004
+    400010: Cylinder005
+    400012: //RootNode
+    2100000: 'Material #26'
+    2100002: 'Material #39'
+    2100004: 'Material #40'
+    2100006: 'Material #38'
+    2100008: 'Material #25'
+    2300000: Box002
+    2300002: Cylinder001
+    2300004: Cylinder002
+    2300006: Cylinder003
+    2300008: Cylinder004
+    2300010: Cylinder005
+    3300000: Box002
+    3300002: Cylinder001
+    3300004: Cylinder002
+    3300006: Cylinder003
+    3300008: Cylinder004
+    3300010: Cylinder005
+    4300000: Cylinder001
+    4300002: Cylinder005
+    4300004: Box002
   externalObjects: {}
   materials:
     importMaterials: 1

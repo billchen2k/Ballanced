@@ -2,27 +2,17 @@
 
 > 10185101210 陈俊潼
 >
-> 10185101225 高志翔
+> 10185101250 高志翔
 >
 > East China Normal University
 
 ## 项目简介
 
-项目名称：Ballanced
+**项目名称：Ballanced**
 
-本项目使用 3DS MAX 构建地图模型，
+本项目为基于 Unity 的 3D 滚球游戏。玩家使用方向键操控画面中心的球体，以尽可能快地在不落下悬崖的情况下抵达终点为目标。具有用户友好的菜单界面，较好的操作感和画面，暂停和重新开始功能与沉浸式的音效和音乐。
 
 项目地址：https://github.com/BillChen2000/Ballanced
-
-在线 Demo：https://ballanced.billc.io/
-
-### 运行效果
-
-![image-20191229172146244](C:\Users\billc\Documents\Ballanced\Readme.assets\image-20191229172146244.png)
-
-![image-20191229195818213](C:\Users\billc\Documents\Ballanced\Readme.assets\image-20191229195818213.png)
-
-![image-20191229195913932](C:\Users\billc\Documents\Ballanced\Readme.assets\image-20191229195913932.png)
 
 ### 创意想法
 
@@ -46,17 +36,52 @@ Ballance 是一款由德国游戏公司 CYPARADE 于 2002 年发行的一款经�
 
 | 成员   | 学号        | 分工                                                         | 占比 |
 | ------ | ----------- | ------------------------------------------------------------ | ---- |
-| 陈俊潼 | 10185101210 | 负责编写游戏控制逻辑，音频触发逻辑，粒子特效设计，工程文档的制作 | 50%  |
-| 高志翔 | 10185101225 | 负责模型的构建，贴图的收集与设计，地图组装与设计，PPT的制作  | 50%  |
+| 陈俊潼 | 10185101210 | 负责编写游戏控制逻辑，音频触发逻辑，粒子特效设计，工程文档的编写 | 50%  |
+| 高志翔 | 10185101250 | 负责模型的构建，贴图的收集与设计，地图组装与设计，PPT的制作  | 50%  |
 
-## 开发环境
+### 运行效果
+
+主菜单：
+
+![image-20191229202700145](C:\Users\billc\Documents\Ballanced\Readme.assets\image-20191229202700145.png)
+
+游戏界面：
+
+![image-20191229202852355](C:\Users\billc\Documents\Ballanced\Readme.assets\image-20191229202852355.png)
+
+![image-20191229195913932](C:\Users\billc\Documents\Ballanced\Readme.assets\image-20191229195913932.png)
+
+![image-20191229201745849](C:\Users\billc\Documents\Ballanced\Readme.assets\image-20191229201745849.png)
+
+暂停界面：
+
+![image-20191229195818213](C:\Users\billc\Documents\Ballanced\Readme.assets\image-20191229195818213.png)
+
+胜利结算界面：
+
+![image-20191229201503109](C:\Users\billc\Documents\Ballanced\Readme.assets\image-20191229201503109.png)
+
+
+## 技术实现
+
+### 开发环境
 
 - Autodesk 3ds MAX 2018 For Education
 - Unity 2018.4.11c1 Personal
 - Visual Studio 2019 Community Edition
-- Windows 10
+- Windows 10 20H1
 
-## Assets 结构
+### 主要技术
+
+- 使用 3DS MAX 构建地图模型，利用材质编辑器完成复杂纹理贴图；
+- 使用 Unity 构建互动逻辑和游戏功能。具体的实现逻辑见后文；
+- 使用粒子系统渲染得分球的特效，让画面更加生动；
+- 使用了环境光散射，让场景色彩和背景色彩更加统一；
+- 使用 Unity 的 Fog 技术，把远处的模型蒙上云雾，让画面更真实；
+- 分数球使用了 BillBoard 技术，用 2D 的纹理来模拟 3D 的火焰效果，减少运算量；
+- 使用 Fade 模式渲染 2D，控制其缓慢移动来模拟低空的云层效果；
+
+## Unity Assets 结构
 
 ### /Prefab
 
@@ -68,11 +93,11 @@ Ballance 是一款由德国游戏公司 CYPARADE 于 2002 年发行的一款经�
 
 #### Fonts
 
-包括游戏中使用的字体，主要为`Agency FB`。
+包括游戏中使用的字体，主要为`Agency FB`。字体已由`TextMesh Pro`提供的转换工具转换成了专用格式。
 
 #### Material
 
-材质文件，包括地面和球体的物理材质模型。
+材质文件，包括地面和球体的物理材质模型，存储了部分物体的摩擦系数。
 
 #### Skybox
 
@@ -84,7 +109,7 @@ Ballance 是一款由德国游戏公司 CYPARADE 于 2002 年发行的一款经�
 
 #### Texture
 
-纹理目录，包含地图模型的纹理和球的纹理等。
+纹理目录，包含地图模型的纹理和球的纹理等。里面还有部分没有使用到的纹理贴图。
 
 ### /Scenes
 
@@ -101,7 +126,7 @@ Ballance 是一款由德国游戏公司 CYPARADE 于 2002 年发行的一款经�
 
 用于显示 UI 文字的插件 `TextMesh Pro`导入的文件。
 
-## 脚本文档
+##  Unity 脚本文档
 
 ### BallController.cs
 
@@ -145,7 +170,7 @@ Ballance 是一款由德国游戏公司 CYPARADE 于 2002 年发行的一款经�
 
 该脚本挂载在主摄像机上，用于追随摄像头。初始化时会载入相机坐标和球体坐标的偏移，在每一个`update()`中将自己的位置修改为球的位置加上偏移的坐标，同时使用`Vector3.Lerp()`来实现平滑的相机移动。
 
-在按下空格键时，会调整相机的旋转角度并抬起相机来实现俯视效果，在检测到空格键离开时恢复之前的角度。
+在按下空格键时，会调整相机的旋转角度并抬起相机来实现俯视效果，在检测到空格键离开时恢复之前的角度。这一部分使用`Quaternion`的变换实现，转换成欧拉角再调整 y 轴上的旋转值，最后使用`Quaternion.Slerp()`实现旋转的平滑移动。
 
 ### FogFollow.cs
 
@@ -190,8 +215,10 @@ Ballance 是一款由德国游戏公司 CYPARADE 于 2002 年发行的一款经�
 
 ### WelcomeHandler.cs
 
-挂载在主菜单`UICanvas`上的脚本，用于接收开始游戏和退出游戏的点击事件
+挂载在主菜单`UICanvas`上的脚本，用于接收开始游戏和退出游戏的点击事件，跳转场景以开始游戏。
+
+
 
 ---
 
-2019.12.29
+2019.12.29, Ver 0.1

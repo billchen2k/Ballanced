@@ -205,5 +205,6 @@ public class BallController : MonoBehaviour
         {
             global.GameOver();
         }
+        
     }
 }

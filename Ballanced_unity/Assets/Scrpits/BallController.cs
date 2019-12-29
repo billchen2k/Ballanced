@@ -8,7 +8,7 @@ public class BallController : MonoBehaviour
 
     private Rigidbody rd;//刚体变量
     private Vector3 birthPosition;
-    public int FORCE = 8;//力量
+    public float FORCE = 8;//力量
     public int DEATH_HEIGHT = 60;
     public int BONES_VALUE = 200;
     public int DEATH_COST = 300;
@@ -43,6 +43,10 @@ public class BallController : MonoBehaviour
                 break;
             case "CheckPoint":
                 //检查点
+                if(other.name == "EndCheckPoint")
+                {
+                    global.playClipByName(GameObject.Find("AudioBGM").GetComponent<AudioSource>(), "Music_EndCheckpoint");
+                }
                 global.playClipByName(audioFX, "Misc_Checkpoint");
                 birthPosition = other.gameObject.transform.position;
                 other.gameObject.GetComponent<SphereCollider>().enabled = false;
@@ -57,6 +61,7 @@ public class BallController : MonoBehaviour
                 break;
             case "WinningPoint":
                 other.gameObject.GetComponent<SphereCollider>().enabled = false;
+                GameObject.Find("AudioWinningBGM").GetComponent<AudioSource>().Stop();
                 global.isWinning = true;
                 global.GameWin();
                 break;
@@ -77,6 +82,9 @@ public class BallController : MonoBehaviour
                 break;
             case "MetalObject":
                 global.playClipByName(audioCollision, "Hit_Wood_Metal");
+                break;
+            case "PaperObject":
+                global.playClipByName(audioCollision, "Hit_Paper");
                 break;
             default:
                 global.playClipByName(audioCollision, "Hit_Wood_Stone");
@@ -189,6 +197,13 @@ public class BallController : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.W))
         {
             global.GameWin();
+        }
+
+
+        /* 一键死亡 */
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.D))
+        {
+            global.GameOver();
         }
     }
 }

@@ -90,9 +90,9 @@ public class Global : MonoBehaviour
         AudioSource audioFX = GameObject.Find("AudioFX").GetComponent<AudioSource>();
         audioFX.loop = true;
         playClipByName(audioFX, "Menu_counter");
-        while(temp <= target - 2)
+        while(temp <= target - 4)
         {
-            temp += 2;    
+            temp += 4;    
             GameObject.Find("TextWinScore").GetComponent<TMP_Text>().text = "SCORE: " + temp.ToString();
             yield return new WaitForSeconds(0.01f);
         }

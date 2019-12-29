@@ -10,6 +10,7 @@ TagManager:
   - BirthPoint
   - CheckPoint
   - WinningPoint
+  - PaperObject
   layers:
   - Default
   - TransparentFX
